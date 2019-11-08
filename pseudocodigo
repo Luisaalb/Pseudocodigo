@@ -1,0 +1,55 @@
+var
+	nome
+	idade
+	empregado
+	salario
+	valor_emprestimo
+	deseja_parcelar
+	numero_parcelas
+	resultado_final
+
+const
+	idade_requerida <- 23
+	mensagem_emprestimo_recusado <- "Sua solicitação de empréstimo foi recusada :("
+
+inicio EmprestimoBancario
+	nome <- digitar("entre com o seu nome")
+	idade <- digitar("entre com a sua idade")
+   
+	se idade >= idade_requerida faça
+		empregado <- digitar("está empregado? S/N")
+   
+		se empregado == "S" faça
+			salario <- digitar("qual o valor do seu salário?")
+   
+			se salario > (emprestimo / 4) faça
+				deseja_parcelar <- digitar("deseja parcelar? S/N")
+
+				se deseja_parcelar == "S" faça
+					numero_parcelas <- digitar("deseja pagar em quantas parecelas?(limite 10)")
+   
+					enquanto numero_parcelas > 10 faça 
+						imprimir("você excedeu o limite de parcelas(10)")
+						numero_parcelas <- digitar("deseja pagar em quantas parecelas?(limite 10)")
+					fim-enquanto
+					
+					resultado_final <- valor_emprestimo/numero_parcelas
+
+					imprimir("Seu empréstimo ficou em " + numero_parecelas + "parcelas de R$" + resultado_final)
+
+				senão
+					imprimir("seu empréstimo ficou em R$" + valor_emprestimo)
+				fim-se
+
+			senão
+				imprimir(mensagem_emprestimo_recusado)
+			fim-se
+
+		senão
+			 imprimir(mensagem_emprestimo_recusado)
+		fim-se
+	senão
+		imprimir(mensagem_emprestimo_recusado)
+	
+	fim-se
+
