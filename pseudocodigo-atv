@@ -1,0 +1,25 @@
+var
+	numero_conta
+  senha
+  valor_sacado
+  valor_conta <- 500
+  i <- 1
+
+inicio Sacando
+	numero_conta <- digitar("Número da conta: ")
+	valor_sacado <- digitar("Valor do sauqe: ")
+   
+	se valor_conta >= valor_sacado faça
+		senha <- digitar("Digite sua senha: ")
+   
+		se senha != '1234' faça    
+      enquanto i < 3 faça
+        imprimir("Senha incorreta")
+        senha <- digitar("Tente novamente")
+        i <- i + 1
+      fim-enquanto
+      imprimir("Conta bloqueada!")
+    senão
+      valor_conta <- valor_conta - valor_sacado
+      imprimir(valor_conta)
+    fim-se
